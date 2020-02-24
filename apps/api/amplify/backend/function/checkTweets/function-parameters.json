@@ -1,0 +1,19 @@
+{
+    "permissions": {
+        "auth": {
+            "koraApiUsers": ["read"]
+        },
+        "storage": {
+            "Ledger": ["read", "update"]
+        }
+    },
+    "storageLedgerName": {
+        "Fn::GetAtt": ["storageLedger", "Outputs.Name"]
+    },
+    "storageuserDbName": {
+        "Fn::GetAtt": ["storageuserDb", "Outputs.Name"]
+    },
+    "storageServiceTwitterName": {
+        "Fn::GetAtt": ["storageServiceTwitter", "Outputs.Name"]
+    }
+}

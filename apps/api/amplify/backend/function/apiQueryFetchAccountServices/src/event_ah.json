@@ -1,0 +1,8 @@
+{
+    "identity": {
+        "claims": {
+            "cognito:username": "204c4289-b591-4e45-81b4-c7bcc8d4ad54"
+        }
+    },
+    "arguments": { "id": "apple_health" }
+}

@@ -1,0 +1,26 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "An auto-generated nested stack.",
+    "Metadata": {},
+    "Parameters": {
+        "AppSyncApiId": {
+            "Type": "String",
+            "Description": "The id of the AppSync API associated with this project."
+        }
+    },
+    "Resources": {
+        "ResolverCache": {
+            "Type": "AWS::AppSync::ApiCache",
+            "Properties": {
+                "ApiCachingBehavior": "PER_RESOLVER_CACHING",
+                "ApiId": {
+                    "Ref": "AppSyncApiId"
+                },
+                "Ttl": 3600,
+                "Type": "T2_SMALL"
+            }
+        }
+    },
+    "Conditions": {},
+    "Outputs": {}
+}

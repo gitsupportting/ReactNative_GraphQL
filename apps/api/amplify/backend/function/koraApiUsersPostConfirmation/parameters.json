@@ -1,0 +1,6 @@
+{
+    "modules": "custom",
+    "storageLedgerName": {
+        "Fn::GetAtt": ["storageLedger", "Outputs.Name"]
+    }
+}

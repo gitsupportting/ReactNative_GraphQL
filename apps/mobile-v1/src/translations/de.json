@@ -1,0 +1,6 @@
+{
+    "auth.security.confirm": "PIN bestätigen",
+    "auth.security.enter_code": "Bitte geben Sie einen 6-stelligen Code ein",
+    "auth.security.phone_number": "Wir haben es an {phoneNumber} gesendet.",
+    "auth.security.resend": "Senden Sie den Code erneut"
+}

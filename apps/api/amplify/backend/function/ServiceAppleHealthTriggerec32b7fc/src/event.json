@@ -1,0 +1,59 @@
+{
+    "Records": [
+        {
+            "eventName": "INSERT",
+            "dynamodb": {
+                "NewImage": {
+                    "Id": { "S": "204c4289-b591-4e45-81b4-c7bcc8d4ad54:2020-0-12" },
+                    "ActivityData": { "N": "8532" },
+                    "ActivityType": { "S": "steps" },
+                    "UserId": { "S": "204c4289-b591-4e45-81b4-c7bcc8d4ad54" },
+                    "RecordedAt": { "S": "2020-01-12" }
+                }
+            }
+        },
+        {
+            "eventName": "MODIFY",
+            "dynamodb": {
+                "NewImage": {
+                    "Id": { "S": "204c4289-b591-4e45-81b4-c7bcc8d4ad54:2020-0-12" },
+                    "ActivityData": { "N": "8532" },
+                    "ActivityType": { "S": "steps" },
+                    "UserId": { "S": "204c4289-b591-4e45-81b4-c7bcc8d4ad54" },
+                    "RecordedAt": { "S": "2020-01-12" }
+                },
+                "OldImage": {
+                    "Id": { "S": "204c4289-b591-4e45-81b4-c7bcc8d4ad54:2020-0-12" },
+                    "ActivityData": { "N": "4532" },
+                    "ActivityType": { "S": "steps" },
+                    "UserId": { "S": "204c4289-b591-4e45-81b4-c7bcc8d4ad54" },
+                    "RecordedAt": { "S": "2020-01-12" }
+                }
+            }
+        },
+        {
+            "eventName": "INSERT",
+            "dynamodb": {
+                "NewImage": {
+                    "Id": { "S": "204c4289-b591-4e45-81b4-c7bcc8d4ad54:2020-0-12" },
+                    "ActivityData": { "N": "2312" },
+                    "ActivityType": { "S": "walking_distance" },
+                    "UserId": { "S": "204c4289-b591-4e45-81b4-c7bcc8d4ad54" },
+                    "RecordedAt": { "S": "2020-01-12" }
+                }
+            }
+        },
+        {
+            "eventName": "INSERT",
+            "dynamodb": {
+                "NewImage": {
+                    "Id": { "S": "204c4289-b591-4e45-81b4-c7bcc8d4ad54:2020-0-12" },
+                    "ActivityData": { "N": "3012" },
+                    "ActivityType": { "S": "cycling_distance" },
+                    "UserId": { "S": "204c4289-b591-4e45-81b4-c7bcc8d4ad54" },
+                    "RecordedAt": { "S": "2020-01-12" }
+                }
+            }
+        }
+    ]
+}

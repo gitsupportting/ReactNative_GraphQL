@@ -1,0 +1,5 @@
+{
+    "tableName": "ServiceTwitter",
+    "partitionKeyName": "TweetId",
+    "partitionKeyType": "S"
+}

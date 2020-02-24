@@ -1,0 +1,22 @@
+[
+    {
+        "id": "auth.security.confirm",
+        "description": "Confirm button",
+        "defaultMessage": "Confirm PIN"
+    },
+    {
+        "id": "auth.security.enter_code",
+        "description": "Ask to enter code SMS code",
+        "defaultMessage": "Please enter 6 digit code"
+    },
+    {
+        "id": "auth.security.phone_number",
+        "description": "Context where code was sent to",
+        "defaultMessage": "We’ve sent it to {phoneNumber}"
+    },
+    {
+        "id": "auth.security.resend",
+        "description": "Button label for resending code",
+        "defaultMessage": "Resend the code"
+    }
+]

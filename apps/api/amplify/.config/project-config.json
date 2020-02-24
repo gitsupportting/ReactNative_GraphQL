@@ -1,0 +1,15 @@
+{
+    "projectName": "KoraApi",
+    "version": "3.0",
+    "frontend": "javascript",
+    "javascript": {
+        "framework": "react-native",
+        "config": {
+            "SourceDir": "src/",
+            "DistributionDir": "dist/",
+            "BuildCommand": "yarn build",
+            "StartCommand": "yarn start"
+        }
+    },
+    "providers": ["awscloudformation"]
+}

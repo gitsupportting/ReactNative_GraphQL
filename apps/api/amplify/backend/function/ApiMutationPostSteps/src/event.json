@@ -1,0 +1,16 @@
+{
+    "identity": {
+        "claims": {
+            "username": "204c4289-b591-4e45-81b4-c7bcc8d4ad54"
+        }
+    },
+    "arguments": {
+        "input": {
+            "steps": [
+                { "date": "2020-01-12T00:00:00Z", "steps": 8532 },
+                { "date": "2020-01-13T00:00:00Z", "steps": 2432 },
+                { "date": "2020-01-13T04:00:00Z", "steps": 1442 }
+            ]
+        }
+    }
+}

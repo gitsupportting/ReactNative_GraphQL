@@ -1,0 +1,12 @@
+[
+    {
+        "id": "auth.signup.button",
+        "description": "Confirm button",
+        "defaultMessage": "Sign up"
+    },
+    {
+        "id": "auth.signup.description",
+        "description": "Hero text for sign up page",
+        "defaultMessage": "Please enter your phone number to grant access to the app."
+    }
+]

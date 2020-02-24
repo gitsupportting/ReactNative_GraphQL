@@ -1,0 +1,131 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-koraapi-dev-153034-authRole",
+            "UnauthRoleArn": "arn:aws:iam::513565175716:role/amplify-koraapi-dev-153034-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::513565175716:role/amplify-koraapi-dev-153034-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-koraapi-dev-153034-deployment",
+            "UnauthRoleName": "amplify-koraapi-dev-153034-unauthRole",
+            "StackName": "amplify-koraapi-dev-153034",
+            "StackId": "arn:aws:cloudformation:eu-west-1:513565175716:stack/amplify-koraapi-dev-153034/e88a1c80-232c-11ea-ad1e-0a51e14e7998",
+            "AmplifyAppId": "d3hg3vj2ut32e0"
+        },
+        "categories": {
+            "auth": {
+                "userPoolGroups": {},
+                "koraApiUsers": {
+                    "facebookAppId": "589039648535777"
+                }
+            },
+            "function": {
+                "ApiQueryTweets": {},
+                "ApiQueryAccount": {},
+                "koraApiUsersPostConfirmation": {},
+                "ApiQueryFetchTransactions": {},
+                "checkTweets": {},
+                "apiMutationUpdateTwitterId": {},
+                "ServiceTwitterTrigger20d91c3c": {},
+                "apiQueryFetchAccountServices": {},
+                "setupEnv": {},
+                "ApiMutationPostSteps": {},
+                "ServiceAppleHealthTriggerec32b7fc": {},
+                "ApiMutationPostActivity": {},
+                "ApiMutationSetGoal": {},
+                "ApiQueryAccountGoals": {}
+            },
+            "storage": {
+                "Ledger": {},
+                "userDb": {},
+                "ServiceTwitter": {},
+                "ServiceAppleHealth": {}
+            }
+        }
+    },
+    "prod": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-koraapi-prod-181759-authRole",
+            "UnauthRoleArn": "arn:aws:iam::513565175716:role/amplify-koraapi-prod-181759-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::513565175716:role/amplify-koraapi-prod-181759-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-koraapi-prod-181759-deployment",
+            "UnauthRoleName": "amplify-koraapi-prod-181759-unauthRole",
+            "StackName": "amplify-koraapi-prod-181759",
+            "StackId": "arn:aws:cloudformation:eu-west-1:513565175716:stack/amplify-koraapi-prod-181759/46880d70-3169-11ea-90b7-02abe6210ac8",
+            "AmplifyAppId": "d3hg3vj2ut32e0"
+        },
+        "categories": {
+            "auth": {
+                "userPoolGroups": {},
+                "koraApiUsers": {
+                    "facebookAppId": "589039648535777"
+                }
+            },
+            "function": {
+                "ApiQueryTweets": {},
+                "ApiQueryAccount": {},
+                "koraApiUsersPostConfirmation": {},
+                "ApiQueryFetchTransactions": {},
+                "checkTweets": {},
+                "apiMutationUpdateTwitterId": {},
+                "apiQueryFetchAccountServices": {},
+                "ServiceTwitterTrigger20d91c3c": {},
+                "setupEnv": {},
+                "koraApiUsers": {},
+                "ApiMutationPostSteps": {},
+                "ServiceAppleHealthTriggerec32b7fc": {},
+                "ApiMutationPostActivity": {},
+                "ApiMutationSetGoal": {},
+                "ApiQueryAccountGoals": {}
+            },
+            "storage": {
+                "Ledger": {},
+                "userDb": {},
+                "ServiceTwitter": {},
+                "ServiceAppleHealth": {}
+            }
+        }
+    },
+    "devints": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-koraapi-devints-135624-authRole",
+            "UnauthRoleArn": "arn:aws:iam::513565175716:role/amplify-koraapi-devints-135624-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::513565175716:role/amplify-koraapi-devints-135624-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-koraapi-devints-135624-deployment",
+            "UnauthRoleName": "amplify-koraapi-devints-135624-unauthRole",
+            "StackName": "amplify-koraapi-devints-135624",
+            "StackId": "arn:aws:cloudformation:eu-west-1:513565175716:stack/amplify-koraapi-devints-135624/dcf2ea90-4e57-11ea-8e4a-069d0ee2d5e8",
+            "AmplifyAppId": "d3hg3vj2ut32e0"
+        },
+        "categories": {
+            "auth": {
+                "userPoolGroups": {},
+                "koraApiUsers": {
+                    "facebookAppId": "589039648535777"
+                }
+            },
+            "function": {
+                "ApiQueryTweets": {},
+                "ApiQueryAccount": {},
+                "koraApiUsersPostConfirmation": {},
+                "ApiQueryFetchTransactions": {},
+                "checkTweets": {},
+                "apiMutationUpdateTwitterId": {},
+                "apiQueryFetchAccountServices": {},
+                "ServiceTwitterTrigger20d91c3c": {},
+                "setupEnv": {},
+                "ApiMutationPostSteps": {},
+                "ServiceAppleHealthTriggerec32b7fc": {},
+                "ApiMutationPostActivity": {},
+                "ApiMutationSetGoal": {},
+                "ApiQueryAccountGoals": {},
+                "ServiceTwitter": {},
+                "Ledger": {},
+                "koraApiUsers": {},
+                "userDb": {},
+                "ServiceAppleHealth": {}
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "identity": {
+        "claims": {
+            "username": "204c4289-b591-4e45-81b4-c7bcc8d4ad54"
+        }
+    },
+    "arguments": {
+        "input": {
+            "activities": [
+                {
+                    "type": "steps",
+                    "date": { "start": "2020-01-12T00:00:00Z", "end": "2020-01-12T00:00:00Z" },
+                    "quantity": "7532"
+                },
+                {
+                    "type": "steps",
+                    "date": { "start": "2020-01-13T00:00:00Z", "end": "2020-01-13T00:00:00Z" },
+                    "quantity": "2432"
+                },
+                {
+                    "type": "steps",
+                    "date": { "start": "2020-01-13T04:00:00Z", "end": "2020-01-13T04:00:00Z" },
+                    "quantity": "1442"
+                },
+                {
+                    "type": "walking_distance",
+                    "date": { "start": "2020-01-12T00:00:00Z", "end": "2020-01-12T00:00:00Z" },
+                    "quantity": "8532"
+                },
+                {
+                    "type": "walking_distance",
+                    "date": { "start": "2020-01-13T00:00:00Z", "end": "2020-01-13T00:00:00Z" },
+                    "quantity": "2432"
+                },
+                {
+                    "type": "walking_distance",
+                    "date": { "start": "2020-01-13T04:00:00Z", "end": "2020-01-13T04:00:00Z" },
+                    "quantity": "1442"
+                },
+                {
+                    "type": "cycling_distance",
+                    "date": { "start": "2020-01-12T00:00:00Z", "end": "2020-01-12T00:00:00Z" },
+                    "quantity": "9532"
+                },
+                {
+                    "type": "cycling_distance",
+                    "date": { "start": "2020-01-13T00:00:00Z", "end": "2020-01-13T00:00:00Z" },
+                    "quantity": "3432"
+                },
+                {
+                    "type": "cycling_distance",
+                    "date": { "start": "2020-01-13T04:00:00Z", "end": "2020-01-13T04:00:00Z" },
+                    "quantity": "1542"
+                },
+                {
+                    "type": "cycling_distance",
+                    "date": { "start": "2020-01-13T04:20:00Z", "end": "2020-01-13T04:30:00Z" },
+                    "quantity": "542"
+                }
+            ]
+        }
+    }
+}

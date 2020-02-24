@@ -1,0 +1,14 @@
+{
+    "trigger": true,
+    "modules": ["custom"],
+    "parentResource": "koraApiUsers",
+    "functionName": "koraApiUsersPostConfirmation",
+    "parentStack": "auth",
+    "triggerEnvs": "[]",
+    "triggerDir": "/Users/artursvonda/.config/yarn/global/node_modules/amplify-category-auth/provider-utils/awscloudformation/utils/../triggers/PostConfirmation",
+    "roleName": "koraApiUsersPostConfirmation",
+    "triggerTemplate": "PostConfirmation.json.ejs",
+    "triggerEventPath": "PostConfirmation.event.json",
+    "skipEdit": true,
+    "resourceName": "koraApiUsersPostConfirmation"
+}

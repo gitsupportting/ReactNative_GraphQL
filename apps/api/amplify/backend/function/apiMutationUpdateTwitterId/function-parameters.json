@@ -1,0 +1,10 @@
+{
+    "permissions": {
+        "auth": {
+            "koraApiUsers": ["read"]
+        },
+        "storage": {
+            "userDb": ["update", "read"]
+        }
+    }
+}

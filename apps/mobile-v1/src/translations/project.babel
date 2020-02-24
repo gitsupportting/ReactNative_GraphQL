@@ -1,0 +1,134 @@
+<babeledit_project version="1.2">
+    <!--
+
+    BabelEdit project file
+    https://www.codeandweb.com/babeledit
+
+    This file contains meta data for all translations, but not the translation texts itself.
+    They are stored in framework-specific message files (.json / .vue / .yaml / .properties)
+
+    -->
+    <preset_collections/>
+    <framework>react-intl</framework>
+    <filename>project.babel</filename>
+    <source_root_dir>../../</source_root_dir>
+    <folder_node>
+        <name></name>
+        <children>
+            <folder_node>
+                <name>auth</name>
+                <children>
+                    <folder_node>
+                        <name>security</name>
+                        <children>
+                            <concept_node>
+                                <name>confirm</name>
+                                <definition_loaded>true</definition_loaded>
+                                <description>Confirm button</description>
+                                <comment></comment>
+                                <default_text>Confirm PIN</default_text>
+                                <translations>
+                                    <translation>
+                                        <language>de-DE</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>en-GB</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                </translations>
+                            </concept_node>
+                            <concept_node>
+                                <name>enter_code</name>
+                                <definition_loaded>true</definition_loaded>
+                                <description>Ask to enter code SMS code</description>
+                                <comment></comment>
+                                <default_text>Please enter 6 digit code</default_text>
+                                <translations>
+                                    <translation>
+                                        <language>en-GB</language>
+                                        <approved>true</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>de-DE</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                </translations>
+                            </concept_node>
+                            <concept_node>
+                                <name>phone_number</name>
+                                <definition_loaded>true</definition_loaded>
+                                <description>Context where code was sent to</description>
+                                <comment></comment>
+                                <default_text>We’ve sent it to {phoneNumber}</default_text>
+                                <translations>
+                                    <translation>
+                                        <language>en-GB</language>
+                                        <approved>true</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>de-DE</language>
+                                        <approved>true</approved>
+                                    </translation>
+                                </translations>
+                            </concept_node>
+                            <concept_node>
+                                <name>resend</name>
+                                <definition_loaded>true</definition_loaded>
+                                <description>Button label for resending code</description>
+                                <comment></comment>
+                                <default_text>Resend the code</default_text>
+                                <translations>
+                                    <translation>
+                                        <language>de-DE</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>en-GB</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                </translations>
+                            </concept_node>
+                        </children>
+                    </folder_node>
+                </children>
+            </folder_node>
+        </children>
+    </folder_node>
+    <isTemplateProject>false</isTemplateProject>
+    <languages>
+        <language>
+            <code>de-DE</code>
+            <source_id></source_id>
+            <source_file>de.json</source_file>
+        </language>
+        <language>
+            <code>en-GB</code>
+            <source_id></source_id>
+            <source_file>en.json</source_file>
+        </language>
+    </languages>
+    <translation_files>
+        <translation_file>
+            <file>en.json</file>
+        </translation_file>
+        <translation_file>
+            <file>de.json</file>
+        </translation_file>
+    </translation_files>
+    <editor_configuration>
+        <save_empty_translations>true</save_empty_translations>
+        <copy_templates>
+            <copy_template></copy_template>
+            <copy_template></copy_template>
+            <copy_template></copy_template>
+        </copy_templates>
+    </editor_configuration>
+    <primary_language>en-GB</primary_language>
+    <configuration>
+        <definitions>src</definitions>
+        <indent>tab</indent>
+        <format>json</format>
+        <support_arrays>true</support_arrays>
+    </configuration>
+</babeledit_project>

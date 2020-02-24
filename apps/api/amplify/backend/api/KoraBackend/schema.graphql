@@ -1,0 +1,156 @@
+enum TransactionType {
+    CREDIT
+    DEBIT
+}
+
+enum ActivityCategory {
+    FOOTPRINT
+    STEPS
+    WALKING_DISTANCE
+    CYCLING_DISTANCE
+    PUBLIC_TRANSIT
+}
+
+type User {
+    id: ID!
+}
+
+interface Service {
+    id: String!
+}
+
+type TwitterServiceAssociatedData {
+    id: String!
+}
+
+type TwitterService implements Service {
+    id: String!
+    associatedData: TwitterServiceAssociatedData
+    twitterId: String!
+}
+
+type AppleHealthService implements Service {
+    id: String!
+    lastSteps: Int!
+    lastStepsRecordedAt: String
+    lastWalkingDistance: Int!
+    lastWalkingDistanceRecordedAt: String
+    lastCyclingDistance: Int!
+    lastCyclingDistanceRecordedAt: String
+}
+
+type Goal {
+    id: ID!
+    category: ActivityCategory!
+    goal: String
+}
+
+type Account {
+    owner: String!
+    balance: Int!
+    services(id: String): [Service!]! @function(name: "apiQueryFetchAccountServices-${env}")
+    goals: [Goal!]! @function(name: "ApiQueryAccountGoals-${env}")
+}
+
+type Transaction {
+    id: ID!
+    amount: Int!
+    type: TransactionType!
+    createdAt: String!
+    description: String!
+    otherParty: User!
+    meta: TransactionMeta
+}
+
+interface TransactionMeta {
+    source: String!
+}
+
+type AppleHealthTransactionMeta implements TransactionMeta {
+    source: String!
+    data: AppleHealthTransactionMetaData!
+}
+
+type AppleHealthTransactionMetaData {
+    date: String!
+    activityType: ActivityType!
+    quantity: Int!
+    quantityRewarded: Int!
+}
+
+type TwitterTransactionMeta implements TransactionMeta {
+    source: String!
+    data: TwitterTransactionMetaData!
+}
+
+type TwitterTransactionMetaData {
+    tweetId: String!
+}
+
+type Tweet @aws_api_key @aws_cognito_user_pools {
+    id: String!
+    text: String!
+    createdAt: String!
+    retweetCount: Int!
+    reward: Int!
+    rewarded: Boolean!
+}
+
+input StepsEntry {
+    date: String!
+    steps: Int!
+}
+
+input PostStepsInput {
+    steps: [StepsEntry!]!
+}
+
+type PostStepsResult {
+    steps: Int!
+}
+
+enum ActivityType {
+    steps
+    walking_distance
+    cycling_distance
+}
+
+input RangeInput {
+    start: String!
+    end: String!
+}
+
+type Range {
+    start: String!
+    end: String!
+}
+
+input ActivityEntry {
+    type: ActivityType!
+    date: RangeInput!
+    quantity: String!
+}
+
+input PostActivityInput {
+    activities: [ActivityEntry!]!
+}
+
+type PostActivityResult {
+    type: ActivityType!
+    quantity: Int!
+}
+
+type Mutation {
+    updateTwitterId(twitterId: String!): Service! @function(name: "apiMutationUpdateTwitterId-${env}")
+    setGoal(category: ActivityCategory!, goal: String): Goal! @function(name: "ApiMutationSetGoal-${env}")
+    postSteps(input: PostStepsInput!): PostStepsResult! @function(name: "ApiMutationPostSteps-${env}")
+    postActivity(input: PostActivityInput!): [PostActivityResult!]! @function(name: "ApiMutationPostActivity-${env}")
+}
+
+type Query {
+    tweets: [Tweet!]! @function(name: "ApiQueryTweets-${env}") @aws_cognito_user_pools @aws_api_key
+    account: Account @function(name: "ApiQueryAccount-${env}") @aws_cognito_user_pools
+    transactions(offset: String, limit: Int): [Transaction!]!
+        @function(name: "ApiQueryFetchTransactions-${env}")
+        @aws_cognito_user_pools
+}

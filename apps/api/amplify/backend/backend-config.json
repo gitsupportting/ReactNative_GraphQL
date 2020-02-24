@@ -1,0 +1,275 @@
+{
+    "auth": {
+        "userPoolGroups": {
+            "service": "Cognito-UserPool-Groups",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [
+                {
+                    "category": "auth",
+                    "resourceName": "koraApiUsers",
+                    "attributes": ["UserPoolId", "AppClientIDWeb", "AppClientID", "IdentityPoolId"]
+                }
+            ]
+        },
+        "koraApiUsers": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [
+                {
+                    "category": "function",
+                    "resourceName": "koraApiUsersPostConfirmation",
+                    "triggerProvider": "Cognito",
+                    "attributes": ["Arn", "Name"]
+                }
+            ]
+        }
+    },
+    "api": {
+        "KoraBackend": {
+            "service": "AppSync",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "authConfig": {
+                    "additionalAuthenticationProviders": [
+                        {
+                            "authenticationType": "API_KEY",
+                            "apiKeyConfig": {
+                                "description": "Public access",
+                                "apiKeyExpirationDays": "365"
+                            }
+                        }
+                    ],
+                    "defaultAuthentication": {
+                        "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+                        "userPoolConfig": {
+                            "userPoolId": "authkoraApiUsers"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "storage": {
+        "Ledger": {
+            "service": "QLDB",
+            "providerPlugin": "awscloudformation"
+        },
+        "userDb": {
+            "service": "DynamoDB",
+            "providerPlugin": "awscloudformation"
+        },
+        "ServiceTwitter": {
+            "service": "DynamoDB",
+            "providerPlugin": "awscloudformation"
+        },
+        "ServiceAppleHealth": {
+            "service": "DynamoDB",
+            "providerPlugin": "awscloudformation"
+        }
+    },
+    "function": {
+        "ApiQueryTweets": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "ServiceTwitter",
+                    "attributes": ["Name"]
+                }
+            ]
+        },
+        "ApiQueryAccount": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "Ledger",
+                    "attributes": ["Name"]
+                }
+            ]
+        },
+        "koraApiUsersPostConfirmation": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "Ledger",
+                    "attributes": ["Name"]
+                }
+            ]
+        },
+        "ApiQueryFetchTransactions": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "Ledger",
+                    "attributes": ["Name"]
+                }
+            ]
+        },
+        "checkTweets": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "auth",
+                    "resourceName": "koraApiUsers",
+                    "attributes": ["UserPoolId"]
+                },
+                {
+                    "category": "storage",
+                    "resourceName": "Ledger",
+                    "attributes": ["Name"]
+                },
+                {
+                    "category": "storage",
+                    "resourceName": "ServiceTwitter",
+                    "attributes": ["Name"]
+                },
+                {
+                    "category": "storage",
+                    "resourceName": "userDb",
+                    "attributes": ["Name"]
+                }
+            ]
+        },
+        "apiMutationUpdateTwitterId": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "userDb",
+                    "attributes": ["Name", "Arn"]
+                },
+                {
+                    "category": "auth",
+                    "resourceName": "koraApiUsers",
+                    "attributes": ["UserPoolId"]
+                }
+            ]
+        },
+        "apiQueryFetchAccountServices": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "userDb",
+                    "attributes": ["Name", "Arn"]
+                },
+                {
+                    "category": "storage",
+                    "resourceName": "ServiceAppleHealth",
+                    "attributes": ["Name", "Arn"]
+                }
+            ]
+        },
+        "ServiceTwitterTrigger20d91c3c": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "ServiceTwitter",
+                    "attributes": ["Name", "Arn", "StreamArn"]
+                },
+                {
+                    "category": "storage",
+                    "resourceName": "Ledger",
+                    "attributes": ["Name"]
+                }
+            ]
+        },
+        "setupEnv": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "Ledger",
+                    "attributes": ["Name"]
+                }
+            ]
+        },
+        "ApiMutationPostSteps": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "ServiceAppleHealth",
+                    "attributes": ["Name", "Arn"]
+                }
+            ]
+        },
+        "ServiceAppleHealthTriggerec32b7fc": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "ServiceAppleHealth",
+                    "attributes": ["Name", "Arn", "StreamArn"]
+                },
+                {
+                    "category": "storage",
+                    "resourceName": "Ledger",
+                    "attributes": ["Name"]
+                }
+            ]
+        },
+        "ApiMutationPostActivity": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "ServiceAppleHealth",
+                    "attributes": ["Name", "Arn"]
+                }
+            ]
+        },
+        "ApiMutationSetGoal": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "userDb",
+                    "attributes": ["Name", "Arn"]
+                }
+            ]
+        },
+        "ApiQueryAccountGoals": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "userDb",
+                    "attributes": ["Name", "Arn"]
+                }
+            ]
+        }
+    }
+}

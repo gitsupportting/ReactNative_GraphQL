@@ -1,0 +1,28 @@
+{
+    "Records": [
+        {
+            "eventName": "INSERT",
+            "dynamodb": {
+                "NewImage": {
+                    "TweetId": { "S": "1234" },
+                    "Usernames": { "SS": ["27a40c91-d4a3-465c-b16b-a08bd8c158db"] }
+                }
+            }
+        },
+        {
+            "eventName": "MODIFY",
+            "dynamodb": {
+                "NewImage": {
+                    "TweetId": { "S": "2345" },
+                    "Usernames": {
+                        "SS": ["310b6aec-7565-4a5f-a2e6-0d00449c9b6b", "310b6aec-7565-4a5f-a2e6-0d00449c9b6b"]
+                    }
+                },
+                "OldImage": {
+                    "TweetId": { "S": "2345" },
+                    "Usernames": { "SS": ["310b6aec-7565-4a5f-a2e6-0d00449c9b6b"] }
+                }
+            }
+        }
+    ]
+}

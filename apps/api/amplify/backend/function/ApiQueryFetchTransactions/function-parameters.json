@@ -1,0 +1,5 @@
+{
+    "storageLedgerName": {
+        "Fn::GetAtt": ["storageLedger", "Outputs.Name"]
+    }
+}

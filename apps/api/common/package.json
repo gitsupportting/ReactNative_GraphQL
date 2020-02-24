@@ -1,0 +1,20 @@
+{
+    "name": "kora-api-common",
+    "version": "0.3.0",
+    "description": "Common libs for kora-api",
+    "license": "Apache-2.0",
+    "files": [
+        "lib/**/*.*",
+        "constants/**/*.*"
+    ],
+    "scripts": {
+        "build": "../../../node_modules/typescript/bin/tsc"
+    },
+    "devDependencies": {
+        "@types/aws-lambda": "^8.10.37"
+    },
+    "dependencies": {
+        "amazon-qldb-driver-nodejs": "^0.1.1-0",
+        "ion-js": "^3.1.2"
+    }
+}

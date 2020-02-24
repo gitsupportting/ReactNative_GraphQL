@@ -1,0 +1,10 @@
+{
+    "identity": {
+        "claims": {
+            "cognito:username": "c928a5c0-3757-4440-a9ee-fbddfb671d61"
+        }
+    },
+    "arguments": {
+        "twitterId": "twitterId"
+    }
+}
